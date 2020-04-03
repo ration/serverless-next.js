@@ -406,11 +406,11 @@ class NextjsComponent extends Component {
         code: join(nextConfigPath, API_LAMBDA_CODE_DIR),
         role: {
           service: ["lambda.amazonaws.com", "edgelambda.amazonaws.com"],
-          policy: {
+       //   policy: {
             arn:
               inputs.policy ||
               "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-          }
+       //   }
         },
         memory: getLambdaMemory("apiLambda"),
         timeout: getLambdaTimeout("apiLambda")
@@ -448,11 +448,11 @@ class NextjsComponent extends Component {
       code: join(nextConfigPath, DEFAULT_LAMBDA_CODE_DIR),
       role: {
         service: ["lambda.amazonaws.com", "edgelambda.amazonaws.com"],
-        policy: {
+//        policy: {
           arn:
             inputs.policy ||
             "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-        }
+ //       }
       },
       memory: getLambdaMemory("defaultLambda"),
       timeout: getLambdaTimeout("defaultLambda")
